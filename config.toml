@@ -1,0 +1,8 @@
+baseURL = "https://cycletorbay.github.io/"
+languageCode = "en"
+title = "Cycle Torbay CIC"
+
+[params]
+  author = "alexmakerarts"
+
+disableKinds = ["taxonomy"]
