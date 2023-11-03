@@ -8,6 +8,7 @@
     {{ else }}
     <title>{{ site.Title }}</title>
     {{ end }}
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta property="og:title" content="resources.Get main.scss" />
     {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
@@ -25,7 +26,7 @@
               <li class="top-nav__link"><a href="/activities">Activities</a></li>
               <li class="top-nav__link"><a href="/events">What's On</a></li>
               <li class="top-nav__link"><a href="/volunteer">Volunteer</a></li>
-              <li class="top-nav__link"><a href="/support">Support Us</a></li>
+              <!--<li class="top-nav__link"><a href="/support">Support Us</a></li>-->
               <li class="top-nav__link"><a href="/contact">Contact</a>
             </div>
           <div class="dropdown">
@@ -36,7 +37,7 @@
                   <a href="/activities">Activities</a>
                   <a href="/events">What's On</a>
                   <a href="/volunteer">Volunteer</a>
-                  <a href="/support">Support Us</a>
+                <!--  <a href="/support">Support Us</a> -->
                   <a href="/contact">Contact</a>
                 </div>
             </div> 
@@ -79,6 +80,7 @@
         <div class="footer-content__left-group">
           <h2 class="footer-content__site-name">{{ site.Title }}</h2>
           <p>© Cycle Torbay CIC {{ now.Format "2006" }}</p>
+          <p>Cycle Torbay C.I.C is a Community Interest Company (Company number 13989735)</p>
         </div>
 
         <!--<div class="footer-content__right-group">

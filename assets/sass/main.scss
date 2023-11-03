@@ -104,6 +104,134 @@ a:hover {
   text-align: left;
 }
 
+.listylenone {
+  list-style-type: none;
+}
+
+.two-columns {
+  column-count: 2;
+  column-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content:space-between;
+  padding-bottom: 20px;
+
+  &__left {
+    width:80px;
+    height: auto;
+  }
+  &__right {
+    width: 800px;
+  }
+}
+
+.three-columns-1 {
+  display: flex;
+  flex-wrap: wrap;
+  column-count: 3;
+  max-width: 900px;
+  column-width:100px;
+  padding: 0px;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content:space-between;
+  
+
+  &_left {
+    flex: 30%;
+  }
+  &_mid {
+    flex: 30%;
+  }
+  &_right {
+    flex: 30%;
+  }
+}
+
+//Modal
+
+/* Add animation (Chrome, Safari, Opera) */
+@-webkit-keyframes example {
+  from {top:-100px;opacity: 0;}
+  to {top:0px;opacity:1;}
+}
+
+/* Add animation (Standard syntax) */
+@keyframes example {
+  from {top:-100px;opacity: 0;}
+  to {top:0px;opacity:1;}
+}
+
+/* The modal's background */
+
+li {
+  list-style-type: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Display the modal when targeted */
+.modal:target {
+  display: table;
+  position: absolute;
+}
+
+/* The modal box */
+.modal-dialog {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* The modal's content */
+.modal-dialog .modal-content {
+  margin: auto;
+  background-color: #ea6624;
+  position: relative;
+  padding: 20px;
+  outline: 0;
+  border: 1px #777 solid;
+  text-align: justify;
+  color: #f1f1f1;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: auto;
+
+  /* Add animation */
+  -webkit-animation-name: example; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+  animation-name: example;
+  animation-duration: 0.5s;
+}
+
+/* The button used to close the modal */
+.closebtn {
+  text-decoration: none;
+  float: right;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ea6624;
+}
+
+.closebtn:hover,
+.closebtn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /*img {
   max-width: 100%;
 }*/
@@ -580,15 +708,14 @@ a:hover {
     text-align: left;
   }
   .cropped_3 {
-    width: 60px; 
-    height: 30%;  
     object-fit: cover;
     object-position: 0% 0%; 
     padding-right: 10px;
     padding-top: 35px;
+    max-width: 75px;
   }
   .form {
-    position: absolute;
+
     top: 0;
     left: 0;
     bottom: 0;
@@ -599,8 +726,7 @@ a:hover {
   .formcont {
     position: relative;
     overflow: visible;
-    width: 100%;
-    padding-top: 520%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    width: 100%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
   }
     
     /* Then style the iframe to fit in the container div with full height and width 
@@ -613,6 +739,50 @@ a:hover {
       width: 100%;
       height: 100%;
     }*/
+    .two-columns {
+      column-count: 2;
+      column-width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content:space-between;
+      padding-bottom: 20px;
+  
+      &__left {
+        width:80px;
+        height: auto;
+      }
+      &__right {
+        width: 100%;
+      }
+    }
+    .cropped_4{
+      display: none;
+    }
+
+    .three-columns-1 {
+      flex-direction: column;
+      height: 50%;
+      max-width: 250px;
+      margin-bottom: 20px;
+      
+      &_left {
+        margin-bottom: 20px;
+      }
+      &_mid {
+        margin-bottom: 20px;
+      }
+    }
+
+    .modal-dialog .modal-content {
+      margin-top: 50px;
+      width: 90%;
+    }
+
+    .app-placeholder-calendar {
+      margin-bottom: 20px;
+    }
 }
 
 /* Tablet menu */
@@ -776,8 +946,9 @@ a:hover {
     order: 1;
     position: relative;
     display: flex;
-    width:60%;
+    width:900px;
     margin: 0;
+    font-size: 18px;
   }
 
   .top-nav__link {
@@ -797,7 +968,6 @@ a:hover {
     margin: 40px 0 80px 0;
   }
     */
-  
 
 
   .featured {
@@ -826,7 +996,7 @@ a:hover {
     &__left-group{
       width: 100%;
       & p {
-        width: 50%;
+        width: 100%;
       }
     }
 
@@ -855,9 +1025,16 @@ a:hover {
     object-position: 0% 0%; 
     padding-right: 20px;
     padding-bottom: 20px;
-
-    }
-  .sidebyside {
+  }
+  .cropped_4 {
+    width: 200px; 
+    height: auto;  
+    object-fit: cover;
+    object-position: 0% 0%; 
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+    .sidebyside {
     display: flex;
     text-align: center;
   }
